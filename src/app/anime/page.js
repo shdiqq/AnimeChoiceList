@@ -1,14 +1,16 @@
 "use client" // This is a client component
 
+import { useSearchParams } from 'next/navigation'
 import NotFound from "@/app/not-found";
 import Navbar from "@/components/Navbar";
 import VideoPlayer from "@/components/VideoPlayer";
 import Image from "next/image";
 import { HiStar } from 'react-icons/hi';
-import YouTube from "react-youtube";
 
-const animeName = async({searchParams}) => {
-  const responseAnimeById = await fetch(`${process.env.API_URL}/anime/${searchParams.q}/full`);
+const animeName = async() => {
+  const searchParams = useSearchParams()
+  const q = searchParams.get('q')
+  const responseAnimeById = await fetch(`${process.env.API_URL}/anime/${q}/full`);
   const animeByIdJson = await responseAnimeById.json();
   if (animeByIdJson.status) {
     return (

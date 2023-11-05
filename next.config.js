@@ -2,6 +2,7 @@
 const nextConfig = {
   output: 'export',
   reactStrictMode: true,
+  trailingSlash: true,
   env: {
     API_URL: process.env.API_URL,
   },
@@ -11,7 +12,7 @@ const nextConfig = {
         hostname: "cdn.myanimelist.net"
       }
     ]
-  }
+  },
 }
 
 module.exports = nextConfig
