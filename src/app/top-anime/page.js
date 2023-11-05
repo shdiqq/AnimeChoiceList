@@ -1,10 +1,30 @@
+"use client" // This is a client component
+
+import React, { useState, useEffect } from 'react'
 import Card from "@/components/Card";
 import Navbar from "@/components/Navbar";
+import Pagination from "@/components/Pagination";
+import Loading from '../loading';
 
-const TopAnime = async ({params}) => {
-  const responseTopAnime = await fetch(`${process.env.API_URL}/top/anime`);
-  const topAnimeJson = await responseTopAnime.json();
-  const topAnimeData = topAnimeJson.data;
+const TopAnime = ({params}) => {
+  const [page, setPage] = useState(1)
+  const [dataTopAnime, setDataTopAnime] = useState(null)
+  const [paginationTopAnime, setPaginationTopAnime] = useState(null)
+  const [loading, setLoading] = useState(true)
+
+  const fetchData = async() => {
+    const response = await fetch(`${process.env.API_URL}/top/anime?page=${page}`);
+    const responseJson = await response.json();
+    setDataTopAnime(responseJson.data)
+    setPaginationTopAnime(responseJson.pagination)
+    setLoading(false)
+  }
+
+  useEffect(() => {
+    fetchData()
+  }, [page])
+
+  if (loading) return (<Loading/>)
 
   return (
     <>
@@ -18,13 +38,16 @@ const TopAnime = async ({params}) => {
             </div>
           </div>
           <div className="w-full grid xl:grid-cols-6 lg:grid-cols-5 md:grid-cols-4 sm:grid-cols-3 grid-cols-2 gap-4">
-            {topAnimeData.map((data) => {
+            {dataTopAnime.map((data) => {
               return (
                 <div key={data.mal_id}>
                   <Card data={data}/>
                 </div>
               )
             })}
+          </div>
+          <div className='w-full flex items-center justify-center'>
+            <Pagination params="/top-anime" data={paginationTopAnime} setPage={setPage}/>
           </div>
         </div>
       </div>

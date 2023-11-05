@@ -1,5 +1,6 @@
 import Card from "@/components/Card";
 import Navbar from "@/components/Navbar";
+import Link from "next/link";
 
 const Home = async() => {
   const responseTopAnime = await fetch(`${process.env.API_URL}/top/anime?limit=12`);
@@ -30,7 +31,7 @@ const Home = async() => {
               <span className="md:text-2xl text-xl">Top Anime</span>
             </div>
             <div>
-              <a href="/top-anime" className="bg-red-500 hover:bg-red-700 text-white md:text-base text-xs py-1 px-2 border border-red-700 rounded cursor-pointer">See Detail</a>
+              <Link href="/top-anime" className="bg-red-500 hover:bg-red-700 text-white md:text-base text-xs py-1 px-2 border border-red-700 rounded cursor-pointer">See Detail</Link>
             </div>
           </div>
           <div className="w-full grid xl:grid-cols-6 lg:grid-cols-5 md:grid-cols-4 sm:grid-cols-3 grid-cols-2 gap-4">

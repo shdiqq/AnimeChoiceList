@@ -1,6 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
+  // output: 'export',
+  reactStrictMode: true,
+  env: {
+    API_URL: process.env.API_URL,
+  },
   images: {
     remotePatterns: [
       {
