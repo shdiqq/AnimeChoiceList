@@ -2,16 +2,16 @@
 import React, { useState } from 'react'
 import YouTube from 'react-youtube'
 
-const VideoPlayer = ({id}) => {
+const VideoPlayer = ({id}) => {  
   const option = {
-    width: "600",
-    height: "250"
+    width: "100%",
+    height: "100%"
   }
 
   return (
     <div className=''>
       <YouTube
-        className=' w-full aspect-video'
+        className='lg:h-112 h-64'
         videoId={id}
         opts={option}
         onReady={(event) => event.target.pauseVideo()}
