@@ -10,8 +10,11 @@ const nextConfig = {
     remotePatterns: [
       {
         hostname: "cdn.myanimelist.net"
+      },
+      {
+        hostname: "img.youtube.com"
       }
-    ]
+    ],
   },
 }
 

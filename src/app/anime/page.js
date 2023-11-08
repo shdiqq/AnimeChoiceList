@@ -3,7 +3,6 @@
 import React, { useState, useEffect } from 'react'
 import { useSearchParams } from 'next/navigation'
 import NotFound from "@/app/not-found";
-import Navbar from "@/components/Navbar";
 import VideoPlayer from "@/components/VideoPlayer";
 import Image from "next/image";
 import { HiStar } from 'react-icons/hi';
@@ -31,7 +30,6 @@ const animeName = () => {
 
   return (
     <>
-      <Navbar params={'/anime'}/>
       <div className="flex flex-col items-center w-full">
         <div className="flex flex-col items-center md:w-5/6 gap-8 p-8">
           <h1 className="text-xl font-extrabold">{dataAnimeById.data.title}</h1>

@@ -3,7 +3,6 @@
 import React, { useState, useEffect } from 'react'
 import { useSearchParams } from 'next/navigation'
 import Card from "@/components/Card";
-import Navbar from "@/components/Navbar";
 import Loading from '../loading';
 
 const Search = ({params}) => {
@@ -27,7 +26,6 @@ const Search = ({params}) => {
 
   return (
     <>
-      <Navbar params={'/search'}/>
       <div className="flex flex-col items-center w-full">
         <div className="flex flex-col md:w-5/6 gap-4 p-8">
           <div className="flex flex-row items-center justify-between">
