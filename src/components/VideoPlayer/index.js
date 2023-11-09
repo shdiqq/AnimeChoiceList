@@ -15,7 +15,6 @@ const VideoPlayer = ({id}) => {
         videoId={id}
         opts={option}
         onReady={(event) => event.target.pauseVideo()}
-        onError={() => alert("Video is broken, please try another.")}
       />
     </div>
   )

@@ -31,16 +31,15 @@ const animeName = () => {
   return (
     <>
       <div className="flex flex-col items-center w-full">
-        <div className="flex flex-col items-center md:w-5/6 gap-8 p-8">
+        <div className="flex flex-col items-center md:w-5/6 md:gap-8 md:p-8 gap-4 p-4">
           <h1 className="text-xl font-extrabold">{dataAnimeById.data.title}</h1>
-          <div className="grid lg:grid-cols-2 justify-items-center gap-4">
-            <div className='h-full'>
+          <div className="grid lg:grid-cols-2 justify-items-center items-center gap-4">
+            <div className='h-fit'>
               <Image
-                className='h-full'
                 alt={dataAnimeById.data.images.webp.large_image_url}
                 src={dataAnimeById.data.images.webp.large_image_url}
-                width={500}
-                height={500}
+                width={420}
+                height={600}
               />
             </div>
             <div className="flex flex-col h-full justify-between lg:gap-16 gap-8">

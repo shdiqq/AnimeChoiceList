@@ -16,14 +16,14 @@ const Home = async() => {
     <>
       <ImageSlider data={topAnimeData}/>
       <div className="flex flex-col items-center w-full">
-        <div className="flex flex-col md:w-5/6 gap-4 p-8">
+        <div className="flex flex-col md:w-5/6 w-full gap-4 p-8">
           <div className="flex flex-row items-center justify-between">
-            <div className="flex flex-row items-center">
-              <span className="text-red-500 md:text-4xl text-2xl">|</span>
-              <span className="md:text-2xl text-xl">Anime Recommendations</span>
+            <div className="flex flex-row items-end gap-1">
+              <p className="text-red-500 md:text-4xl text-xl">|</p>
+              <p className="md:text-2xl text-base">Anime Recommendations</p>
             </div>
           </div>
-          <div className="w-full grid xl:grid-cols-6 lg:grid-cols-5 md:grid-cols-4 sm:grid-cols-3 grid-cols-2 gap-4">
+          <div className="w-full grid xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-3 grid-cols-2 gap-4">
             {recomendationAnimeData.map((data) => {
               return (
                 <div key={data.mal_id}>
