@@ -46,9 +46,9 @@ const ImageSlider = ({data}) => {
   return (
     <div className="md:h-[calc(80vh)] h-[calc(75vh)] w-full relative">
       <div style={{ backgroundImage: `url(${data[currentIndex].trailer.images.maximum_image_url})` }} className='w-full h-full bg-center bg-cover duration-500 transition-all opacity-40'></div>
-      <div className="absolute top-0 left-0 lg:w-[calc(40%)] w-full h-full flex flex-col justify-center md:gap-8 gap-4 lg:p-8 p-4">
+      <div className="absolute top-0 left-0 w-full h-full flex flex-col justify-center md:gap-8 gap-4 lg:p-8 p-4">
         <h1 className="text-white sm:text-3xl md:text-4xl lg:text-5xl text-2xl lg:text-left text-center font-bold drop-shadow-xl">{data[currentIndex].title}</h1>
-        <p className="text-white text-justify lg:text-lg md:text-base text-xs drop-shadow-xl">{data[currentIndex].synopsis.split('.').slice(0, 2).join('.')}.</p>
+        <p className="lg:w-[calc(40%)] w-full text-white text-justify lg:text-lg md:text-base text-xs drop-shadow-xl">{data[currentIndex].synopsis.split('.').slice(0, 2).join('.')}.</p>
         <button onClick={moreInfoBehavior} className='bg-white text-white bg-opacity-30 rounded-md w-fit lg:p-4 md:p-3 p-2 lg:text-base md:text-sm text-xs font-medium flex flex-row items-center gap-2 hover:bg-opacity-10 transition'><AiOutlineInfoCircle/>More Info</button>
       </div>
       <button onClick={prevSlide} className="absolute z-10 top-[90%] -translate-x-0 translate-y-[-50%] left-[5%] lg:text-7xl md:text-5xl text-3xl rounded-full p-4 bg-black/20 text-white cursor-pointer">
